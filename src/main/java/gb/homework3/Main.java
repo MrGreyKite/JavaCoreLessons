@@ -24,14 +24,25 @@ public class Main {
         appleBox2.info();
         orangeBox2.info();
 
+        System.out.println("Коробка с апельсинами #1 соответствует по весу коробке с яблоками #1: "+orangeBox1.compare(appleBox1));
+        System.out.println("Коробка с апельсинами #2 соответствует по весу коробке с яблоками #2: "+orangeBox2.compare(appleBox2));
+
         orangeBox3.addFruit(new Orange());
-        appleBox3.addFruits(new Apple(),5);
+        orangeBox3.addFruit(new Orange());
+        appleBox3.addFruits(new Apple(),9);
 
         appleBox3.info();
         orangeBox3.info();
 
-        System.out.println("Коробка 1 соответствует по весу коробке 2: "+orangeBox1.compare(appleBox1));
-        System.out.println("Коробка 1 соответствует по весу коробке 4: "+orangeBox2.compare(appleBox2));
+        orangeBox1.pourOverTo(orangeBox3);
+
+        System.out.println("Вес коробки с апельсинами #1:" + orangeBox1.getWeight());
+        System.out.println("Вес коробки с апельсинами #3:" + orangeBox3.getWeight());
+        System.out.println("Вес коробки с яблоками #3:" + appleBox3.getWeight());
+
+        System.out.println("Коробка с апельсинами #1 соответствует по весу коробке с апельсинами #2: "+orangeBox1.compare(orangeBox2));
+        System.out.println("Коробка с апельсинами #3 соответствует по весу коробке с яблоками #3: "+orangeBox3.compare(appleBox3));
+
 
 
     }

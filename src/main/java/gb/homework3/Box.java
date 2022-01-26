@@ -15,7 +15,8 @@ public class Box<T extends Fruit> {
 
     @SafeVarargs
     public Box(T... fruits) {
-        this.fruitList = Arrays.asList(fruits);
+        this.fruitList = new ArrayList<>();
+        fruitList.addAll(Arrays.asList(fruits));
         this.fruitName = fruits[0].toString();
     }
 
